@@ -56,3 +56,19 @@ class Fenster(QMainWindow):
 app = QApplication([])
 w = Fenster()
 app.exec()
+
+#Buttons definieren, File erstellen
+def createConnects(self):
+      self.button.clicked.connect(self.save)
+
+def save(self):
+        vorname = self.vornameLine.text()
+        name = self.nameLine.text()
+        Geburtstag = self.Geburtstag.text()
+        Adresse = self.AdresseLine.text()
+        PostLeitzahl = self.PostLeitzahlLine.text()
+        Ort = self.OrtLine.text()
+        Land = self.Land.currentText()
+
+        ausgabe = f"{vorname},{name},{Geburtstag},{Adresse},{PostLeitzahl},{Ort},{Land}"
+        print(ausgabe)## Verknüpfung mit File (file.write)??
