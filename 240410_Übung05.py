@@ -6,7 +6,7 @@ from PyQt5.QtWidgets import*
 class Fenster(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("GUI-Programmierung")
+        self.setWindowTitle("MainWindow")
 
 ##Layout
         layout = QFormLayout()
@@ -14,7 +14,7 @@ class Fenster(QMainWindow):
         nameLine = QLineEdit()
         Geburtstag = QDateEdit()
         AdresseLine = QLineEdit()
-        PostLeitzahlLine = QLineEdit()
+        PostleitzahlLine = QLineEdit()
         OrtLine = QLineEdit()
         Land = QComboBox()
         Land.addItems(["Schweiz", "Deutschland", "Österreich"]) 
@@ -27,7 +27,7 @@ class Fenster(QMainWindow):
         layout.addRow("Name", nameLine)
         layout.addRow("Geburtstag:", Geburtstag)
         layout.addRow("Adresse:", AdresseLine)
-        layout.addRow("PostLeitzahl:", PostLeitzahlLine)
+        layout.addRow("Postleitzahl:", PostleitzahlLine)
         layout.addRow("Ort:", OrtLine)
         layout.addRow("Land:", Land)
         layout.addRow(button1)
@@ -42,14 +42,16 @@ class Fenster(QMainWindow):
 
 ##Menübar
         menubar = self.menuBar()
+        
         filemenu = menubar.addMenu("File")
-
         save = QAction("Save", self)
         quit = QAction("Quit", self)
-
-
         filemenu.addAction(save)
         filemenu.addAction(quit)
+
+        viewmenu = menubar.addMenu("View")
+        karte = QAction("Karte", self)
+        viewmenu.addAction(karte)
 
 
 ## Anziege
@@ -71,9 +73,9 @@ def save(self):
         name = self.nameLine.text()
         Geburtstag = self.Geburtstag.text()
         Adresse = self.AdresseLine.text()
-        PostLeitzahl = self.PostLeitzahlLine.text()
+        Postleitzahl = self.PostleitzahlLine.text()
         Ort = self.OrtLine.text()
         Land = self.Land.currentText()
 
-        ausgabe = f"{vorname},{name},{Geburtstag},{Adresse},{PostLeitzahl},{Ort},{Land}"
+        ausgabe = f"{vorname},{name},{Geburtstag},{Adresse},{Postleitzahl},{Ort},{Land}"
         print(ausgabe)## Verknüpfung mit File (file.write)??
