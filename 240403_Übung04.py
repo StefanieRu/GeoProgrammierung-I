@@ -12,7 +12,7 @@ class Fenster(QMainWindow):
         layout = QFormLayout()
         vornameLine = QLineEdit()
         nameLine = QLineEdit()
-        Geburtstag = QSpinBox(minimum=1/1/1900, maximum=1/1/2100, value=1/1/2000)
+        Geburtstag = QDateEdit()
         AdresseLine = QLineEdit()
         PostLeitzahlLine = QLineEdit()
         OrtLine = QLineEdit()
