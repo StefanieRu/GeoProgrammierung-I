@@ -23,7 +23,6 @@ class Fenster(QMainWindow):
         button3 = QPushButton("Save")
 
 
-
         layout.addRow("Vorname:",vornameLine)
         layout.addRow("Name", nameLine)
         layout.addRow("Geburtstag:", Geburtstag)
